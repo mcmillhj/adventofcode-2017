@@ -68,6 +68,7 @@ fun inverse_captcha_2 input = let
     | inverse_captcha_2' (x::xs, y::ys) acc = if x = y
                                               then inverse_captcha_2' (xs, ys) acc + x
                                               else inverse_captcha_2' (xs, ys) acc
+    | inverse_captcha_2' _ _ = raise Domain
 
 in
   inverse_captcha_2' (halve digits) 0
